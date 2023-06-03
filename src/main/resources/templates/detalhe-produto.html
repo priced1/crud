@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Detalhe Produto</title>
+		<meta charset="utf-8">
+	</head>
+	<body>
+		<h1>Detalhe Produto</h1>
+		<table border="1">
+			<tr>
+				<th>ID:</th>
+				<td>
+					<span th:text="${produto.id}"></span>
+				</td>
+			</tr>
+			<tr>
+				<th>Nome:</th>
+				<td>
+					<span th:text="${produto.nome}"></span>
+				</td>
+			</tr>
+			<tr>
+				<th>Descrição:</th>
+				<td>
+					<span th:text="${produto.descricao}"></span>
+				</td>
+			</tr>
+			<tr>
+				<th>Preço:</th>
+				<td>
+					<span th:text="${produto.preco}"></span>
+				</td>
+			</tr>
+		</table>
+		<a th:href="@{/produto/list}">Lista</a>
+	</body>
+</html>

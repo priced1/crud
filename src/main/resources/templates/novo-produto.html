@@ -10,16 +10,16 @@
 		
 		<form action="/produto/novo" method="post">
 
-			<input type="hidden" name="id" value="0"> <br>
+			<input type="hidden" name="id" th:value="${produto.id}"> <br>
 
 			<span for="nome">Nome:</span>
-			<input type="text" name="nome" > <br>
+			<input type="text" name="nome" th:value="${produto.nome}"> <br>
 			
 			<span for="descricao">Descrição:</span>
-			<input type="text" name="descricao"> <br>
+			<input type="text" name="descricao"  th:value="${produto.descricao}"> <br>
 
 			<span for="preco">Preço:</span>
-			<input type="text" name="preco" value="0.00"><br>
+			<input type="text" name="preco" th:value="${produto.preco}"><br>
 
 			<input type="submit" value="Enviar">
 		</form>
