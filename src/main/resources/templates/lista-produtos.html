@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Lista produtos</title>
+		<meta charset="utf-8">
+	</head>
+
+		<body>
+			<script th:inline="javascript">
+			/*<![CDATA[*/
+					var msg = /*[[${msg}]]*/ null
+					if(msg != null){
+						alert(msg);
+					}
+					/*]]>*/
+			</script>
+			
+			<h1>Lista produtos</h1>
+			<table border="1">
+				<tr>
+					<th>ID</th>
+					<th>Nome</th>
+					<th></th>
+					<th></th>
+				</tr>
+				<tr th:each="prod : ${produtos}">
+				
+					<td>
+						<span th:text="${prod.id}"></span>
+					</td>
+				
+					<td>
+						<span th:text="${prod.nome}"></span>
+					</td>
+				
+					<td>
+						<a th:href="@{/produto/{id} (id=${prod.id}) }">Detalhe</a>
+					</td>
+					
+					<td>
+						<a th:href="@{/produto/{id}/edit (id=${prod.id})}">Editar</a>
+					
+					</td>
+				</tr>
+				
+			</table>
+			<a th:href="@{/produto/novo}">Novo</a>
+		</body>
+		
+<html>

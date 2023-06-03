@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Novo Produto</title>
+		<meta charset="utf-8">
+	</head>
+	
+	<body>
+		<h1>Novo Produto</h1>
+		
+		<form action="/produto/novo" method="post">
+
+			<input type="hidden" name="id" value="0"> <br>
+
+			<span for="nome">Nome:</span>
+			<input type="text" name="nome" > <br>
+			
+			<span for="descricao">Descrição:</span>
+			<input type="text" name="descricao"> <br>
+
+			<span for="preco">Preço:</span>
+			<input type="text" name="preco" value="0.00"><br>
+
+			<input type="submit" value="Enviar">
+		</form>
+	</body>
+</html>
