@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
-import br.com.belval.crud.model.Produto;
+import br.com.belval.crud.model.Curso;
 import br.com.belval.crud.repository.ProdutoRepository;
 
 	
@@ -20,20 +20,20 @@ import br.com.belval.crud.repository.ProdutoRepository;
 @Controller
 public class ProdutoController {
 
-	private static List<Produto> listaProdutos = new ArrayList<Produto>();
+	private static List<Curso> listaProdutos = new ArrayList<Curso>();
 	private static int proxId = 1;
 
 	@GetMapping("/produto/novo")
 	public ModelAndView novo() {
 		//return "novo-produto";
 		ModelAndView modelAndView = new ModelAndView("novo-produto");
-		modelAndView.addObject("produto", new Produto());
+		modelAndView.addObject("produto", new Curso());
 		return modelAndView;
 	}
 	
 
 	@PostMapping("/produto/novo")
-	public ModelAndView novo(Produto produto, RedirectAttributes redirectAttributes) {
+	public ModelAndView novo(Curso produto, RedirectAttributes redirectAttributes) {
 		ModelAndView modelAndView = new ModelAndView("redirect:/produto/list");
 		String msg = "";
 		//Identifica se é um novo produto sendo criado ou
@@ -62,7 +62,7 @@ public class ProdutoController {
 	
 	@GetMapping("/produto/{id}")
 	public String detalhe(@PathVariable("id") int id, Model model) {
-		Produto p = repository.findById(id);
+		Curso p = repository.findById(id);
 		if (p == null) {
 			return "produto-nao-encontrado";
 		}
@@ -71,7 +71,7 @@ public class ProdutoController {
 	}
 	@GetMapping("/produto/{id}/edit")
 	public String edit(@PathVariable("id") int id, Model model) {
-		Produto p = repository.findById(id);
+		Curso p = repository.findById(id);
 		if (p == null) {
 			return "produto-nao-encontrado";
 		}
